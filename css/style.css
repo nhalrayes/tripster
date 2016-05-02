@@ -1,0 +1,1218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    line-height: 145%;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clear {
+    clear: both;
+}
+.sticky {
+    position: fixed;
+    /*width: 100%;*/
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+}
+#dropdown {
+    display: none;
+}
+
+/** -------------------------------
+2. BASE STYLES
+-------------------------------- **/
+
+/* ---------- Headings ---------- */
+
+h1, 
+h2, 
+h3,
+h4 {
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 140%;
+    color: #000;
+}
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px; 
+    color: #fff;
+    font-size: 2rem;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+h2 {
+    font-size: 1.5rem;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+h4 {
+    margin-bottom: 20px;
+}
+
+/* ---------- Bold ----------- */
+
+span {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* ---------- Links ---------- */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    border-radius: 3px;
+    border: 1px solid #e67e22;
+    padding: 15px 25px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-top: 20px;
+    text-align: center;
+}
+.btn:hover, 
+.btn:active {
+    border: 1px solid #e67e22;
+    background: #e67e22;
+    transition: all 0.5s;
+} 
+.btn:hover a,
+.btn:active a {
+    color: #fff;
+    transition: color 0.5s;
+}
+.btn-city {
+    width: 48%;
+}
+.arrow {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 3rem;
+}
+
+/** -------------------------------
+3. LAYOUT
+-------------------------------- **/
+
+section {
+    padding: 60px 0;
+}
+.col {
+    float: left;
+    margin-right: 15px;
+    width: 360px; /* why can't i use 31% */
+}
+.col p {
+    padding: 0 12px 0 0;
+}
+.col:last-child {
+    margin-right: 0;
+}
+
+/* ------------ Tabs ------------ */
+
+.tabs {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+}
+.tab-links:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.tab-links li {
+    margin: 0 5px;
+    float: left;
+    list-style: none;
+}
+.tab-links a {
+    padding: 9px 15px;
+    display: inline-block;
+    border-radius: 3px 3px 0 0;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+    transition: all linear 0.15s;
+}
+.tab-links a:hover {
+    background: #ccc;
+    border: 1px solid transparent;
+    color: #222;
+    transition: all 0.5s;
+}
+.tab-links li.active a, 
+.tab-links li.active a:hover {
+    background: #fff;
+    color: #e67e22;
+    border-radius: 3px 3px 0 0;
+    border-color: #ccc #ccc transparent #ccc;
+}
+.tab-content {
+    padding: 15px;
+    background: #fff;
+}
+.tab-content:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.tab {
+    display: none;
+}
+.tab.active {
+    display: block;
+}
+
+/** -------------------------------
+4. SECTION - HEADER
+-------------------------------- **/
+
+.home {
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(../images/clouds.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+ 
+nav {
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+    height: 140px;
+    width: 100%;
+    box-shadow: 0 0 2px #000;
+}
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+
+.main-nav li {
+    display:inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-top: 2px solid transparent;
+    transition: border-top 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-top: 2px solid #e67e22;
+}
+.main-nav-active {
+    border-top: 2px solid #e67e22;
+}
+.hero-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+}
+.arrow {
+    padding: 38% 50% 0 50%;
+}
+.mbl-nav {
+    display: none;
+}
+
+
+/** -------------------------------
+4. SECTION - ABOUT
+-------------------------------- **/
+
+.about-text {
+    text-align: center;
+    line-height: 140%;
+}
+
+/** -------------------------------
+4. SECTION - CBN IMAGES
+-------------------------------- **/
+
+.cbn-images {
+    padding: 0;
+}
+
+.cbn-images {
+    list-style: none;
+    width: 100%;
+}
+
+.cbn-images li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.cbn-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #000000;
+}
+
+.cbn-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.cbn-photo img:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+/** -------------------------------
+4. SECTION - LA
+-------------------------------- **/
+
+.LA-img {
+    float: left;
+    width: 20%;
+    min-height: 100px;
+}
+.LA-img img {
+    opacity: 0.7;
+    width: 200px;
+    height: auto;
+}
+.LA-content {
+    padding-top: 20px;
+}
+.city-row {
+    margin-top: 60px;
+}
+.col img {
+    width: 340px;
+    height: auto;
+    vertical-align: top;
+}
+.overlay {
+    position:relative;
+    width: 340px;
+    height: auto;
+}
+.overlay:after {
+    content:'';
+    text-align: center;
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    top: 0; left: 0;
+    background: rgba(0,0,0,0.50);
+    opacity: 0;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+.overlay:hover:after {
+    opacity:1;
+}
+
+/** -------------------------------
+4. SECTION -  NYC
+-------------------------------- **/
+
+.beer-food-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(../images/beer-burger.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    background-attachment: fixed;
+}
+
+/** -------------------------------
+4. SECTION - NYC
+-------------------------------- **/
+
+.app a:hover,
+.app a:active {
+    color: #e67e22;
+}
+.app a:visited {
+    /*color: #efab6e;*/
+}
+.app li {
+    line-height: 150%;
+}
+
+/** -------------------------------
+4. SECTION - QUOTE
+-------------------------------- **/
+
+.quote {
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(../images/-sampler.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+}
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    font-size: 140%;
+    line-height: 145%;
+    position: relative;
+    margin-top: 20px;
+}
+blockquote:before {
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 100px;
+}
+blockquote:after {
+    content: "\201D";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 100px;
+}
+cite {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    display: block;
+}
+cite img {
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-top: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+iframe {
+    max-width: 100%;
+  width: 640px;
+  height: 480px;
+
+}
+
+/** -------------------------------
+4. SECTION - THEMES
+-------------------------------- **/
+
+#DC {
+    text-align: center;
+}
+.btn-themes {
+    width: 15%;
+    display: inline-block;
+    margin-right: 10px;
+}
+.bth-themes:last-child {
+    margin-right: 0;
+}
+
+/** -------------------------------
+4. SECTION - BLOG
+-------------------------------- **/
+
+.blog-row {
+    width: 100%;
+}
+.btn-blog {
+    width: 50%;
+}
+.blog-text p {
+    font-size: 1rem;
+}
+.blog-view-more {
+    padding-top: 60px;
+    text-align: center;
+}
+.btn-view-more {
+    width: 30%;
+    margin: 0 auto;
+}
+.rt-col>p>a:hover {
+    color: #e67e22;
+}
+
+/** -------------------------------
+5. PAGE - DINNER THEME
+-------------------------------- **/
+
+.theme-title-text {
+    color: #fff;
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('../images/beer-pouring.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+.box {
+    background: linear-gradient(rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6));
+    padding: 20px;
+    box-shadow: 0 0 1px #fff;
+}
+.theme-row {
+    width: 100%;
+    margin-bottom: 110px;
+}
+.theme-row:last-child {
+    margin-bottom: 90px;
+}
+.theme-row img {
+    width: 350px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+}
+.theme-row p {
+    line-height: 145%;
+}
+.btn-theme {
+    float: left;
+    width: 20%;
+}
+
+/** -------------------------------
+5. PAGE - BLOG
+-------------------------------- **/
+
+.blog-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(../images/beer-sampler.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+}
+.hero-blog-text {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    text-align: center;
+}
+.lft-col {
+    width: 80%;
+    height: auto;
+    float: left;
+}
+.rt-col {
+    width: 20%;
+    float: left;
+}
+article img {
+    width: 80%;
+}
+article {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+article:last-child {
+    border-bottom: transparent;
+}
+article p {
+    padding: 0 200px 30px 0;
+}
+.btn-read-more {
+    width: 20%;
+    margin: 0 0 20px 0;
+}
+aside>p {
+    line-height: 200%;
+}
+
+/** -------------------------------
+6. BLOG PAGE - 
+-------------------------------- **/
+
+.blog-post {
+    background: #000;
+}
+
+
+/** -------------------------------
+4. SECTION - CONTACT US
+-------------------------------- **/
+
+.contact-us {
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(../images/beer-cheers.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    background-attachment: fixed;
+}
+input, 
+textarea {
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid #e67e22;
+}
+textarea {
+    color: #444;
+}
+label {
+    font-size: 0.8rem;
+}
+input[name="firstname"] {
+    margin-right: 90px;
+}
+input[name="submit"] {
+    background: #e67e22;
+    color: #fff;
+}
+input[name="username"] {
+    margin-right: 33px;
+}
+label[for="beers"] {
+    margin-right:10px;
+}
+label[for="additional-info"] {
+    vertical-align: top;
+    line-height: 85px;
+}
+.form-row {
+    margin: 0 auto;
+    width: 700px;
+}
+.contact-text {
+    text-align: center;
+    line-height: 140%;
+    margin-bottom: 40px;
+}
+#contact-us-form p {
+    margin-bottom: 30px;
+}
+#contact-us-form p:last-of-type {
+    text-align: center;
+}
+
+/** -------------------------------
+4. SECTION - FOOTER
+-------------------------------- **/
+
+footer {
+    background-color: #333;
+    padding: 40px;
+    font-size: 0.9rem;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+    list-style: none;
+    float:right;
+}
+
+footer p {
+    color: #888;
+    text-align: left;
+    margin-top: 40px;
+    font-size: 60%;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 1.6rem;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+    transition: color 0.2s;
+}
+
+.ion-social-facebook:hover {
+    color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+    color: #00aced;
+}
+
+.ion-social-googleplus:hover {
+    color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+    color: #517fa4;
+}
+
+/** -------------------------------
+4. MEDIA QUERIES
+-------------------------------- **/
+
+@media screen and (max-width: 1000px) { 
+    html {
+        font-size: 18px;
+    }
+    .row {
+        max-width: 950px;
+    }
+
+/* ----- Header ------ */
+
+    .arrow {
+        padding: 48% 50% 0 50%;
+    }
+    .tab-content {
+        padding: 15px;
+        background: #fff;
+    }
+
+/* ------ Beers ------- */
+
+    .city-img {
+        margin-right: 30px;
+    }
+    .city-img img {
+        opacity: 0.7;
+        width: 200px;
+        height: auto;
+    }
+    .city-content {
+        margin-left: 20px;
+    }
+
+/* ------- Cities ------- */
+
+    .col {
+        float: left;
+        margin-right: 15px;
+        width: 31.5%; 
+    }
+    .col p {
+        padding: 0 12px 0 0;
+    }
+    .col:last-child {
+        margin-right: 0;
+    }
+    .col img {
+        width: 100%;
+        height: auto;
+    }
+    .overlay {
+        position:relative;
+        width: 100%;
+        height: auto;
+    }
+    .btn-city {
+        width: 70%;
+
+    }
+    .city-row {
+        margin-top: 55px;
+    }
+
+/* ------- Themes ------- */
+
+    .btn-themes {
+        width: 18%;
+    }
+
+/* ------- Blog Section ------- */
+
+    .btn-blog {
+        width: 55%;
+    }
+    .lft-col {
+        width: 77%;
+    }
+    .rt-col {
+        width: 23%;
+    }
+
+/* ------- Blog Page ------- */   
+
+    .btn-read-more {
+        width: 30%;
+    } 
+
+/* ------- Theme Page ------- */
+
+    .theme-row:last-child {
+        margin-bottom: 100px;
+    }
+
+
+/* ------- Contact Us Page ------- */
+
+    input[name="username"] {
+        margin-right: 40px;
+    }
+
+/* ------- Footer ------- */
+
+    .social-links {
+        margin-right: 30px;
+    }
+
+}
+
+@media screen and (max-width: 767px) { 
+    html {
+        font-size: 17px;
+    }
+    .row {
+        max-width: 747px;
+    }
+    .logo {
+        margin-left: 10px;
+    }
+    nav ul {
+        display: none;
+    }
+    .mbl-nav {
+        display: block;
+        padding: 7.5% 0 0 90%;
+        color: #fff;
+        font-size: 1.5rem;
+        top: 0;
+        right: 60px;    
+    }
+    .hero-text {
+        font-size: 1.7rem;
+    }
+    .arrow {
+        display: none;
+    }
+    #dropdown {
+        display: none;
+        background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+        position: absolute;
+        top: 85px;
+        right: 15px;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border-radius: 0 0 3px 3px; 
+        text-align: center;
+    }
+    #dropdown a {
+        color: #e67e22;
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    #dropdown a:hover {
+        background: #333;
+        color: #fff;
+    }
+
+    #dropdown.visible {
+       display: block;
+       z-index: 10000;
+    }
+
+/* ------- Tabs --------- */
+
+    .tabs {
+        position: relative;
+        min-height: 80px;
+    }   
+    .tabs ul {
+        width: 180px;
+        padding: 5px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: solid 1px #aaa;
+        border-radius: 3px;
+        text-align: center;
+        /*box-shadow: 0 1px 2px rgba(0,0,0,.3);*/
+    }
+    .tabs li {
+        display: none; /* hide all <li> items */
+        margin: 0 auto;
+    }
+    .tab-links li {
+        float: none;
+    }
+    .tabs .active {
+        display: block; /* show only current <li> item */
+    }
+    .tabs a {
+        display: block;
+        padding: 5px 5px 5px 5px;
+        text-align: center;
+    }
+    .tabs .active a {
+        background: none;
+        color: #666;
+        border: transparent;
+    }
+
+    /* on nav hover */
+    .tabs ul:hover {
+        background: #fff;
+    }
+    .tabs ul:hover li {
+        display: block;
+        margin: 0 0 5px;
+    }
+    .tabs.center ul {
+        left: 50%;
+        margin-left: -90px;
+    }
+
+/* ------ Beers ------- */
+
+    .beer-img {
+        margin-right: 60px;
+    }
+    .beer-img img {
+        opacity: 0.7;
+        width: 200px;
+        height: auto;
+    }
+    .beer-content {
+        margin-left: 20px;
+    }   
+
+/* ------ Beer Food Image ------- */
+    
+    .beer-food-img {
+        height: 50vh;
+
+    } 
+
+/* --------- Quote --------- */
+
+    blockquote {
+        padding: 2%;
+        font-style: italic;
+        font-size: 1.4rem;
+        line-height: 145%;
+        position: relative;
+        margin-top: 20px;
+    }
+    blockquote:before {
+        content: "\201C";
+        font-size: 5rem;
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: 70px;
+    }
+    blockquote:after {
+        content: "\201D";
+        font-size: 5rem;
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 75px;
+    }
+    cite {
+        font-size: 1rem;
+    }
+
+/* ------- Blog Section ------- */
+
+    .btn-blog {
+        width: 65%;
+    }
+    .lft-col {
+        width: 72%;
+    }
+    .rt-col {
+        width: 28%;
+    }
+
+/* ------- Blog Page ------- */   
+
+    .btn-read-more {
+        width: 30%;
+    } 
+
+/* ------- Theme Page ------- */
+
+    .theme-row:last-child {
+        margin-bottom: 100px;
+    }
+    .btn-theme {
+        width: 30%;
+    }
+
+/* ------- Footer ------- */
+
+    .social-links {
+        margin-right: 50px;
+    }
+
+}
+
+@media screen and (max-width: 480px) { 
+    html {
+        font-size: 16px;
+    }
+    .row {
+        max-width: 460px;
+    }
+    .mbl-nav {
+        display: block;
+        padding: 12% 0 0 90%;
+        color: #fff;
+        font-size: 1.8rem;
+    }
+    .arrow {
+        display: none;
+    }
+
+/* ------- Beer Showcase ------- */
+
+    .cbn-images li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+
+/* ------ Beers ------- */
+
+    .beer-content {
+        margin: 5px;
+    }
+    .beer-img {
+        display: none;
+        float: none;
+        margin-right: 60px;
+    }
+
+/* ------- 3 Col ------- */
+
+    .col {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+
+    }
+    .col p {
+        padding: 0 12px 0 0;
+    }
+    .col img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+/* ------- Cities ------- */
+
+    .app,
+    .col h3 {
+        text-align: center;
+    }
+    .btn-city {
+        width: 70%;
+        /*margin-bottom: 20px;*/
+    }
+    .btn-city:last-child {
+        margin-bottom: 0;
+    }
+    .city-row {
+        margin-top: 35px;
+    }
+
+/* --------- Quote --------- */
+
+    blockquote {
+        font-size: 1.2rem;
+    }
+    blockquote:before,
+    blockquote:after {
+        display: none;
+    }
+
+/* --------- Dinner Theme --------- */
+
+    #DC {
+        margin: 0 auto;
+        padding-left: 10px;
+    }
+    .btn-themes {
+        width: 95%;
+    }
+
+/* --------- Blog Section --------- */
+
+    .blog-view-more {
+        padding-top: 40px;
+        text-align: center;
+    }
+    .btn-view-more {
+        width: 50%;
+    }
+    .blog-text h4,
+    .blog-text p {
+        padding-left: 10px;
+    }
+    .btn-blog {
+        margin-left: 10px;
+    }
+
+/* --------- Blog Page --------- */
+
+    .lft-col,
+    .rt-col {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    article img {
+        width: 100%;
+    }
+    article p {
+        padding: 0 10px 20px 10px;
+    }
+    article h3,
+    aside h4,
+    aside p {
+        padding-left: 10px;
+    }
+    .btn-read-more {
+        width: 50%;
+        margin-left: 10px;
+    }
+
+/* --------- Theme Page --------- */
+    
+    .theme-row img {
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+    }
+    .btn-theme {
+        width: 40%;
+    }
+
+/* --------- Contact Us Page --------- */
+
+    .form-row {
+        width: 460px;
+        padding-left: 20px;
+    }
+    input,
+    textarea {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    input[name="firstname"] {
+        margin-right: 30px;
+    }
+    input[name="submit"]{
+        width: 30%;
+    }
+
+    #contact-us-form p {
+        margin-bottom: 0;
+    }
+    #contact-us-form p:last-of-type {
+        margin-bottom: 0;
+    }
+       
+}
